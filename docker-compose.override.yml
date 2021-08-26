@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+
+  ecommercemongodb:
+    container_name: ecommercemongodb
+    restart: always
+    volumes:
+      - ${WEBAPP_STORAGE_HOME}/site:/data/db
+    ports:
+      - "27017:27017" 
+
+  ecommerce.product.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ProductDatabaseSettings:ConnectionString=mongodb://ecommercemongodb:27017"
+    depends_on:
+      - ecommercemongodb
+    ports:
+      - "8000:80"
+    volumes:
+      - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro

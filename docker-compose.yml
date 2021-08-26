@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  ecommercemongodb:
+    image: mongo
+
+  ecommerce.product.api:
+    image: ${DOCKER_REGISTRY-}ecommerceproductapi
+    build:
+      context: .
+      dockerfile: src/Services/ECommerce.Product.API/Dockerfile

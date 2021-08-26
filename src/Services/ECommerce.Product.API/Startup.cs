@@ -1,16 +1,15 @@
+using ECommerce.Product.API.Data;
+using ECommerce.Product.API.Data.Abstractions;
+using ECommerce.Product.API.Repositories;
+using ECommerce.Product.API.Repositories.Abstraction;
+using ECommerce.Product.API.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ECommerce.Product.API
 {
@@ -28,10 +27,24 @@ namespace ECommerce.Product.API
         {
 
             services.AddControllers();
+
+            #region Project Dependencies
+
+            services.Configure<ProductDatabaseSettings>(Configuration.GetSection(nameof(ProductDatabaseSettings)));
+            services.AddSingleton<IProductDatabaseSettings, ProductDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
+
+            services.AddTransient<IProductContext, ProductContext>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+
+            #endregion
+
+            #region Swagger Dependencies
             services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerce.Product.API", Version = "v1" });
-            });
+                {
+                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerce.Product.API", Version = "v1" });
+                }); 
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
