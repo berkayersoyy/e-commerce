@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E5B6FCC5-3AC3-447B-B0A3-FF5E41407C0F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{3BEFAFD3-953D-44B1-8E39-E482681E349A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{A63C2A01-71A2-4101-A1C0-40F0BBF0E4EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApp", "WebApp", "{7FBF7D2F-F3F9-4432-B69F-8A6BB5730F37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.ProductAPI", "src\Services\ECommerce.ProductAPI\ECommerce.ProductAPI.csproj", "{D56A115D-852B-4A9B-B6A5-B015A4656A33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D56A115D-852B-4A9B-B6A5-B015A4656A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56A115D-852B-4A9B-B6A5-B015A4656A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56A115D-852B-4A9B-B6A5-B015A4656A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56A115D-852B-4A9B-B6A5-B015A4656A33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BEFAFD3-953D-44B1-8E39-E482681E349A} = {E5B6FCC5-3AC3-447B-B0A3-FF5E41407C0F}
+		{A63C2A01-71A2-4101-A1C0-40F0BBF0E4EC} = {E5B6FCC5-3AC3-447B-B0A3-FF5E41407C0F}
+		{7FBF7D2F-F3F9-4432-B69F-8A6BB5730F37} = {E5B6FCC5-3AC3-447B-B0A3-FF5E41407C0F}
+		{D56A115D-852B-4A9B-B6A5-B015A4656A33} = {A63C2A01-71A2-4101-A1C0-40F0BBF0E4EC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {763EA5AD-D328-4B40-9342-02612D153972}
+	EndGlobalSection
+EndGlobal
