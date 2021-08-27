@@ -11,6 +11,7 @@ services:
       - "27017:27017" 
 
   ecommerce.product.api:
+    container_name: ecommerceproductapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ProductDatabaseSettings:ConnectionString=mongodb://ecommercemongodb:27017"

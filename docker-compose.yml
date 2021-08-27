@@ -9,4 +9,4 @@ services:
     image: ${DOCKER_REGISTRY-}ecommerceproductapi
     build:
       context: .
-      dockerfile: src/Services/ECommerce.Product.API/Dockerfile
+      dockerfile: src/Services/Product/ECommerce.Product.API/Dockerfile

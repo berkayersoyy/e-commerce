@@ -27,7 +27,7 @@ namespace ECommerce.Product.API.Repositories
 
         public async Task<IEnumerable<Entities.Product>> GetProductsByName(string name)
         {
-            var filter = Builders<Entities.Product>.Filter.ElemMatch(x => x.Name, name);
+            var filter = Builders<Entities.Product>.Filter.Eq(x => x.Name, name);
             return await _context.Products.Find(filter).ToListAsync();
         }
 

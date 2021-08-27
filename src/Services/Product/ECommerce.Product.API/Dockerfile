@@ -7,10 +7,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["src/Services/ECommerce.Product.API/ECommerce.Product.API.csproj", "src/Services/ECommerce.Product.API/"]
-RUN dotnet restore "src/Services/ECommerce.Product.API/ECommerce.Product.API.csproj"
+COPY ["src/Services/Product/ECommerce.Product.API/ECommerce.Product.API.csproj", "src/Services/Product/ECommerce.Product.API/"]
+RUN dotnet restore "src/Services/Product/ECommerce.Product.API/ECommerce.Product.API.csproj"
 COPY . .
-WORKDIR "/src/src/Services/ECommerce.Product.API"
+WORKDIR "/src/src/Services/Product/ECommerce.Product.API"
 RUN dotnet build "ECommerce.Product.API.csproj" -c Release -o /app/build
 
 FROM build AS publish
