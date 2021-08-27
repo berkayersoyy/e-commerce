@@ -20,22 +20,40 @@ namespace ECommerce.Product.API.Data
             {
                 new Entities.Product
                 {
-                    Name = "Monster Abra A5",
-                    Category = "Laptop",
-                    Description = "PC",
-                    Image = "Monster.png",
-                    Price = 10600M,
-                    Summary = "Laptop"
+                    Category = "Phone",
+                    Description = "Phone",
+                    Image = "image1",
+                    Name = "IPhone",
+                    Price = 1200M,
+                    Summary = "iphone"
                 },
                 new Entities.Product
                 {
-                    Name = "Macbook Air",
-                    Category = "Laptop",
-                    Description = "PC",
-                    Image = "Macbook.png",
-                    Price = 13500M,
-                    Summary = "Laptop"
-                }
+                    Category = "Phone",
+                    Description = "Phone",
+                    Image = "image1",
+                    Name = "Xiaomi",
+                    Price = 1200M,
+                    Summary = "iphone"
+                },
+                new Entities.Product
+                {
+                    Category = "Phone",
+                    Description = "Phone",
+                    Image = "image1",
+                    Name = "Samsung",
+                    Price = 1200M,
+                    Summary = "iphone"
+                },
+                new Entities.Product
+                {
+                    Category = "Phone",
+                    Description = "Phone",
+                    Image = "image1",
+                    Name = "Huawei",
+                    Price = 1200M,
+                    Summary = "iphone"
+                },
             };
         }
     }
