@@ -1,3 +1,4 @@
+using ECommerce.WebApp.UI.Clients;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -17,9 +18,18 @@ namespace ECommerce.WebApp.UI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Mvc Configuration
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddMvc();
             services.AddRazorPages();
+            #endregion
+
+            #region Dependency Configuration
+
+            services.AddHttpClient();
+            services.AddHttpClient<ProductClient>();
+
+            #endregion
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
