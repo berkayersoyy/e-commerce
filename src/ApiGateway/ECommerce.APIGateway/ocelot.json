@@ -1,0 +1,55 @@
+{
+  //Products
+
+  "Routes": [
+    {
+      //Product API
+      "DownstreamPathTemplate": "/api/v1/Product",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceproductapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Product",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Product/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceproductapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Product/GetProductsByName/{name}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceproductapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/GetProductsByName/{name}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Product/GetProductsByCategory/{categoryName}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceproductapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Product/GetProductsByCategory/{categoryName}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}
