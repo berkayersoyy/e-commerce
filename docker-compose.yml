@@ -10,3 +10,10 @@ services:
     build:
       context: .
       dockerfile: src/Services/Product/ECommerce.Product.API/Dockerfile
+
+  ecommerce.apigateway:
+    image: ${DOCKER_REGISTRY-}ecommerceapigateway
+    build:
+      context: .
+      dockerfile: ../ECommerce.APIGateway/Dockerfile
+
