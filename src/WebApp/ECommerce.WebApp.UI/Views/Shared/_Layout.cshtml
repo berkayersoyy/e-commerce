@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Online</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/product.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <div class="navbar-wrapper">
+                <div class="left-panel">
+                    <ul class="left-menu">
+                        <li class="left-menu-item">
+                            Sign In
+                        </li>
+                        <li class="left-menu-item">
+                            Register
+                        </li>
+                        <li class="left-menu-item">
+                            Search
+                        </li>
+                    </ul>
+                </div>
+                <div class="logo-wrapper">
+                    <h1 class="logo">Shop Online</h1>
+                </div>
+                <div class="right-panel">
+                    <a>Cart</a>
+                </div>
+            </div>
+        </nav>
+        <div class="category-menu">
+            <ul class="category-list">
+                <li class="category-list-item">Clothing</li>
+                <li class="category-list-item">Shoes</li>
+                <li class="category-list-item">Accesories</li>
+                <li class="category-list-item">More</li>
+            </ul>
+        </div>
+    </header>
+    <div class="wrapper">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Shop Online
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Product.API", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBusRabbitMQ", "src\Services\Common\EventBusRabbitMQ\EventBusRabbitMQ.csproj", "{785A7375-63E6-4E6B-9D55-8B3FCBB81965}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.WebApp.UI", "src\WebApp\ECommerce.WebApp.UI\ECommerce.WebApp.UI.csproj", "{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{785A7375-63E6-4E6B-9D55-8B3FCBB81965}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{785A7375-63E6-4E6B-9D55-8B3FCBB81965}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{785A7375-63E6-4E6B-9D55-8B3FCBB81965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +57,7 @@ Global
 		{C34011BB-3B73-45D9-8C20-88927FB190BF} = {A63C2A01-71A2-4101-A1C0-40F0BBF0E4EC}
 		{A7C982E8-3EA3-410A-BC81-F3AC2B6C7268} = {22C4E69A-7612-400A-9523-042A1CCD7348}
 		{785A7375-63E6-4E6B-9D55-8B3FCBB81965} = {C34011BB-3B73-45D9-8C20-88927FB190BF}
+		{17E80FC5-49C4-4929-8B16-B4B7D9CE10E5} = {7FBF7D2F-F3F9-4432-B69F-8A6BB5730F37}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {763EA5AD-D328-4B40-9342-02612D153972}
