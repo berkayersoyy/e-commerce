@@ -24,6 +24,7 @@ services:
       - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
 
   ecommerce.apigateway:
+    container_name: ecommerceapigateway
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
@@ -35,3 +36,5 @@ services:
       - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
 
 
+
+  
