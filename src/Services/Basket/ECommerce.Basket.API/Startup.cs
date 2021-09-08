@@ -1,17 +1,13 @@
-using ECommerce.Product.API.Data;
-using ECommerce.Product.API.Data.Abstractions;
-using ECommerce.Product.API.Repositories;
-using ECommerce.Product.API.Repositories.Abstraction;
-using ECommerce.Product.API.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using ECommerce.Basket.API.Repositories;
+using ECommerce.Basket.API.Repositories.Abstractions;
 
-namespace ECommerce.Product.API
+namespace ECommerce.Basket.API
 {
     public class Startup
     {
@@ -28,25 +24,27 @@ namespace ECommerce.Product.API
 
             services.AddControllers();
 
+            #region Redis Dependencies
+
+            services.AddStackExchangeRedisCache(options =>
+            {
+                options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
+            });
+
+            #endregion
+
             #region Project Dependencies
 
-            services.Configure<ProductDatabaseSettings>(Configuration.GetSection(nameof(ProductDatabaseSettings)));
-            services.AddSingleton<IProductDatabaseSettings, ProductDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<ProductDatabaseSettings>>().Value);
-
-            services.AddTransient<IProductContext, ProductContext>();
-            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
 
             #endregion
 
             #region Swagger Dependencies
             services.AddSwaggerGen(c =>
-                {
-                    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerce.Product.API", Version = "v1" });
-                }); 
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ECommerce.Basket.API", Version = "v1" });
+            }); 
             #endregion
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +54,7 @@ namespace ECommerce.Product.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ECommerce.Product.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ECommerce.Basket.API v1"));
             }
 
             app.UseRouting();

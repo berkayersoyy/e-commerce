@@ -16,3 +16,10 @@ services:
     build:
       context: .
       dockerfile: src/ApiGateway/ECommerce.APIGateway/Dockerfile
+
+  ecommerce.basket.api:
+    image: ${DOCKER_REGISTRY-}ecommercebasketapi
+    build:
+      context: .
+      dockerfile: src/Services/Basket/ECommerce.Basket.API/Dockerfile
+

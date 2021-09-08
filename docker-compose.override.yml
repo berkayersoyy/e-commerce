@@ -35,6 +35,10 @@ services:
       - ${HOME}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
       - ${HOME}/ASP.NET/Https:/root/.aspnet/https:ro
 
+  ecommerce.basket.api:
+    container_name: ecommercebasketapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8001:80"
 
-
-  
