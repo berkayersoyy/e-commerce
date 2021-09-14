@@ -1,5 +1,8 @@
+using ECommerce.Ordering.API.EventBusConsumer;
 using ECommerce.Ordering.Application;
 using ECommerce.Ordering.Infrastructure;
+using EventBusRabbitMQ.Core;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -34,7 +37,29 @@ namespace ECommerce.Ordering.API
             #endregion
 
             #region API Dependencies
-            services.AddControllers(); 
+
+            services.AddControllers();
+
+            // MassTransit-RabbitMQ Configuration
+            services.AddMassTransit(config =>
+            {
+                config.AddConsumer<BasketCheckoutConsumer>();
+
+                config.UsingRabbitMq((ctx, cfg) =>
+                {
+                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
+                    
+                    cfg.ReceiveEndpoint(EventBusConstants.BasketCheckoutQueue, c =>
+                    {
+                        c.ConfigureConsumer<BasketCheckoutConsumer>(ctx);
+                    });
+                });
+            });
+            services.AddMassTransitHostedService();
+
+            services.AddScoped<BasketCheckoutConsumer>();
+            services.AddAutoMapper(typeof(Startup));
+
             #endregion
 
             #region Swagger Dependencies
