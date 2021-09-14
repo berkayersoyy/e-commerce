@@ -1,9 +1,18 @@
 version: '3.4'
 
 services:
+    
+  rabbitmq:
+    image: rabbitmq:3-management
+  
+  ecommerceorderdb:
+    image: mcr.microsoft.com/mssql/server
 
-  ecommercemongodb:
+  ecommerceproductdb:
     image: mongo
+
+  ecommercebasketdb:
+    image: redis
 
   ecommerce.product.api:
     image: ${DOCKER_REGISTRY-}ecommerceproductapi
@@ -22,4 +31,11 @@ services:
     build:
       context: .
       dockerfile: src/Services/Basket/ECommerce.Basket.API/Dockerfile
+
+
+  ecommerce.ordering.api:
+    image: ${DOCKER_REGISTRY-}ecommerceorderingapi
+    build:
+      context: .
+      dockerfile: src/Services/Ordering/ECommerce.Ordering.API/Dockerfile
 

@@ -2,13 +2,35 @@ version: '3.4'
 
 services:
 
-  ecommercemongodb:
-    container_name: ecommercemongodb
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  ecommerceorderdb:
+    container_name: ecommerceorderdb
+    environment:
+      SA_PASSWORD: "B12345678"
+      ACCEPT_EULA: "Y" 
+    restart: always
+    ports:
+      - "1433:1433"
+
+  ecommerceproductdb:
+    container_name: ecommerceproductdb
     restart: always
     volumes:
       - ${WEBAPP_STORAGE_HOME}/site:/data/db
     ports:
       - "27017:27017" 
+
+  ecommercebasketdb:
+    container_name: ecommercebasketdb
+    restart: always
+    ports:
+      - "6379:6379" 
 
   ecommerce.product.api:
     container_name: ecommerceproductapi
@@ -16,7 +38,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ProductDatabaseSettings:ConnectionString=mongodb://ecommercemongodb:27017"
     depends_on:
-      - ecommercemongodb
+      - ecommerceproductdb
     ports:
       - "8000:80"
     volumes:
@@ -39,6 +61,22 @@ services:
     container_name: ecommercebasketapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - "CacheSettings:ConnectionString=basketdb:6379"
+    depends_on:
+      - ecommercebasketdb
     ports:
       - "8001:80"
+
+
+  ecommerce.ordering.api:
+    container_name: ecommerceorderingapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=B12345678"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
+    depends_on:
+      - ecommerceorderdb
+      - rabbitmq
+    ports:
+      - "8002:80"
 

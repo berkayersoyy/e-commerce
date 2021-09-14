@@ -33,13 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Basket.API", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{27FEA188-106A-4254-B1EC-D5406E7475BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.API", "src\Services\Ordering\ECommerce.Ordering.API\ECommerce.Ordering.API.csproj", "{16D01D34-3B7A-4150-9E60-D27A82D4D906}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Ordering.API", "src\Services\Ordering\ECommerce.Ordering.API\ECommerce.Ordering.API.csproj", "{16D01D34-3B7A-4150-9E60-D27A82D4D906}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Domain", "src\Services\Ordering\ECommerce.Ordering.Domain\ECommerce.Ordering.Domain.csproj", "{9578C5D5-E367-47EC-9996-2BB72F8287DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Ordering.Domain", "src\Services\Ordering\ECommerce.Ordering.Domain\ECommerce.Ordering.Domain.csproj", "{9578C5D5-E367-47EC-9996-2BB72F8287DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Application", "src\Services\Ordering\ECommerce.Ordering.Application\ECommerce.Ordering.Application.csproj", "{C5F85D62-0314-4728-A0AE-77EE1326FE31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Ordering.Application", "src\Services\Ordering\ECommerce.Ordering.Application\ECommerce.Ordering.Application.csproj", "{C5F85D62-0314-4728-A0AE-77EE1326FE31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Infrastructure", "src\Services\Ordering\ECommerce.Ordering.Infrastructure\ECommerce.Ordering.Infrastructure.csproj", "{7215A057-D189-4EEC-BD7E-2EDA3719C437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Ordering.Infrastructure", "src\Services\Ordering\ECommerce.Ordering.Infrastructure\ECommerce.Ordering.Infrastructure.csproj", "{7215A057-D189-4EEC-BD7E-2EDA3719C437}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
