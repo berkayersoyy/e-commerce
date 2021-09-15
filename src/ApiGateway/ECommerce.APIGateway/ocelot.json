@@ -48,6 +48,92 @@
       ],
       "UpstreamPathTemplate": "/Product/GetProductsByCategory/{categoryName}",
       "UpstreamHttpMethod": [ "GET" ]
+    },
+    //Basket API
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket/GetBasket/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommercebasketapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket/GetBasket/{email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket/DeleteBasket/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommercebasketapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket/DeleteBasket/{email}",
+      "UpstreamHttpMethod": [ "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Basket",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommercebasketapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Basket",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Ordering API
+    {
+      "DownstreamPathTemplate": "/api/v1/Order/GetOrdersByEmail/{email}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceorderingapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Order/GetOrdersByEmail/{email}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Order/CheckoutOrder",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceorderingapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Order/CheckoutOrder",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Order/UpdateOrder",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceorderingapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Order/UpdateOrder",
+      "UpstreamHttpMethod": [ "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Order/DeleteOrder/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ecommerceorderingapi",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/Order/DeleteOrder/{id}",
+      "UpstreamHttpMethod": [ "DELETE" ]
     }
   ]
 }
