@@ -36,7 +36,7 @@ services:
     container_name: ecommerceproductapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "ProductDatabaseSettings:ConnectionString=mongodb://ecommercemongodb:27017"
+      - "ProductDatabaseSettings:ConnectionString=mongodb://ecommerceproductdb:27017"
     depends_on:
       - ecommerceproductdb
     ports:
@@ -51,6 +51,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
       - ecommerce.product.api
+      - ecommerce.ordering.api
+      - ecommerce.basket.api
     ports:
       - "5000:80"
     volumes:
@@ -61,9 +63,10 @@ services:
     container_name: ecommercebasketapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "CacheSettings:ConnectionString=basketdb:6379"
+      - "CacheSettings:ConnectionString=ecommercebasketdb:6379"
     depends_on:
       - ecommercebasketdb
+      - rabbitmq
     ports:
       - "8001:80"
 
@@ -72,7 +75,7 @@ services:
     container_name: ecommerceorderingapi
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - "ConnectionStrings:OrderingConnectionString=Server=orderdb;Database=OrderDb;User Id=sa;Password=B12345678"
+      - "ConnectionStrings:OrderingConnectionString=Server=ecommerceorderdb;Database=OrderDb;User Id=sa;Password=B12345678"
       - "EventBusSettings:HostAddress=amqp://guest:guest@rabbitmq:5672"
     depends_on:
       - ecommerceorderdb
