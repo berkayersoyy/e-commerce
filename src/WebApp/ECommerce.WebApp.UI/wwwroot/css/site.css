@@ -150,24 +150,28 @@ body {
 
 .category-list {
     padding: 0px;
+    margin-top: 5px;
 }
 
 .category-list-item {
     padding: 10px;
     display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .cart-icon img {
     margin-bottom: 5px;
 }
 
-.left-menu-item:hover {
+.hover-item:hover{
     color: #f8b6a9;
     transition: 0.2s ease-in-out;
 }
-.right-panel:hover {
-    color: #f8b6a9;
-    transition: 0.2s ease-in-out;
+.right-panel a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
 }
 
 .category-list-item {
@@ -180,10 +184,7 @@ body {
         color: black;
     }
 
-    .category-list-item:hover {
-        color: #f8b6a9;
-        transition: 0.2s ease-in-out;
-    }
+
 /*Navbar end*/
 
 

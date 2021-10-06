@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="basket-wrapper">
+    <div class="routing"><a>HOME / YOUR CART</a></div>
+    <table class="table cart">
+        <thead class="cart-header">
+        <tr>
+            <th class="cart-header-item" colspan="2">Item</th>
+            <th class="cart-header-item">Price</th>
+            <th class="cart-header-item">Quantity</th>
+            <th class="cart-header-item">Total</th>
+        </tr>
+        </thead>
+        <tbody class="cart-list">
+        <tr class="cart-item" data-item-row>
+            <td class="cart-item-block cart-item-figure"><img src="images/bottom1.jpg" /></td>
+            <td class="cart-item-block cart-item-title">
+                <h4 class="dress-name"><a>Dress Name</a></h4>
+                <dl class="definition-list">
+                    <dt class="definition-list-key">Color:</dt>
+                    <dd class="definition-list-value"> Black</dd>
+                    <dt class="definition-list-key">Size:</dt>
+                    <dd class="definition-list-value"> Medium</dd>
+                </dl>
+                <p class="change">Change</p>
+            </td>
+            <td class="cart-item-block cart-item-price">
+                $20.00
+            </td>
+            <td class="cart-item-block cart-item-quantity">
+                <div class="form-quantity">
+                    <div class="quantity">
+                        <a href="#" class="quantity__minus"><span>-</span></a>
+                        <input name="quantity" type="text" class="quantity__input" value="1">
+                        <a href="#" class="quantity__plus"><span>+</span></a>
+                    </div>
+                </div>
+            </td>
+            <td class="cart-item-block cart-item-total">$20.00</td>
+        </tr>
+        <tr class="cart-item" data-item-row>
+            <td class="cart-item-block cart-item-figure"><img src="images/bottom1.jpg" /></td>
+            <td class="cart-item-block cart-item-title">
+                <h4 class="dress-name"><a>Dress Name</a></h4>
+                <dl class="definition-list">
+                    <dt class="definition-list-key">Color:</dt>
+                    <dd class="definition-list-value"> Black</dd>
+                    <dt class="definition-list-key">Size:</dt>
+                    <dd class="definition-list-value"> Medium</dd>
+                </dl>
+                <p class="change">Change</p>
+            </td>
+            <td class="cart-item-block cart-item-price">
+                $20.00
+            </td>
+            <td class="cart-item-block cart-item-quantity">
+                <div class="form-quantity">
+                    <div class="quantity">
+                        <a href="#" class="quantity__minus"><span>-</span></a>
+                        <input name="quantity" type="text" class="quantity__input" value="1">
+                        <a href="#" class="quantity__plus"><span>+</span></a>
+                    </div>
+                </div>
+            </td>
+            <td class="cart-item-block cart-item-total">$20.00</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div class="col-md-5 ml-auto checkout">
+            <ul class="cart-totals">
+                <li class="cart-total">
+                    <div class="cart-total-title"><strong>Subtotal:</strong></div>
+                    <div class="cart-total-value">$20.00</div>
+                </li>
+            </ul>
+            <div class="cart-actions">
+                <button class="checkout-button">CHECK OUT</button>
+            </div>
+        </div>
+    </div>
+</div>
+

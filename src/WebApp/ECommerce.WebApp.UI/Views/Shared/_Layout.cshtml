@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="~/css/product.css" rel="stylesheet" />
+    <link href="~/css/basket.css" rel="stylesheet" />
 </head>
 <body>
     <header>
@@ -14,15 +15,15 @@
             <div class="navbar-wrapper">
                 <div class="left-panel">
                     <ul class="left-menu">
-                        <li class="left-menu-item">
+                        <li class="left-menu-item hover-item">
                             <span class="login-icon"><img src="icons/login-icon.png" /></span>
                             <a>Sign In</a>
 
                         </li>
-                        <li class="left-menu-item">
+                        <li class="left-menu-item hover-item">
                             <a>Register</a>
                         </li>
-                        <li class="left-menu-item">
+                        <li class="left-menu-item hover-item">
                             <a>Search</a>
                         </li>
                     </ul>
@@ -30,17 +31,17 @@
                 <div class="logo-wrapper">
                     <a><h1 class="logo">Shop Online</h1></a>
                 </div>
-                <div class="right-panel">
+                <div class="right-panel ">
                     <span class="cart-icon"><img src="icons/shopping-cart.png" /></span>
-                    <a>Cart</a>
+                    <a class="hover-item" asp-controller="Basket" asp-action="Index">Cart</a>
                 </div>
             </div>
         </nav>
         <div class="category-menu">
             <ul class="category-list">
-                <li class="category-list-item"><a asp-controller="Product" asp-action="Index">Tops</a></li>
-                <li class="category-list-item"><a asp-controller="Product" asp-action="Index">Bottoms</a></li>
-                <li class="category-list-item"><a>More</a></li>
+                <li class="category-list-item"><a class="hover-item" asp-controller="Product" asp-action="Index">Tops</a></li>
+                <li class="category-list-item"><a class="hover-item" asp-controller="Product" asp-action="Index">Bottoms</a></li>
+                <li class="category-list-item hover-item"><a>More</a></li>
             </ul>
         </div>
     </header>
@@ -58,6 +59,7 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/quantityButton.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)

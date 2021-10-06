@@ -53,18 +53,19 @@
 .product-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 1rem;
     margin: 20px;
 }
 .product {
     flex-basis: 32%;
 }
 .card-img {
-    height: 600px;
+    height: 100%;
+    width: auto;
 }
 .card-img img {
-    height: inherit;
-    width: auto;
+    width: 100%;
+    border: 0;
 }
 .product-title {
     color: #757575;
